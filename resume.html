@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rayhan Adytia Oemarin, S.Kom. — Resume</title>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #1a1a1a;
+      --text-muted: #666666;
+      --primary-color: #000000;
+      --border-color: #e5e5e5;
+      --accent-color: #0071e3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f5f5f7;
+      color: var(--text-color);
+      line-height: 1.6;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .resume-container {
+      background-color: var(--bg-color);
+      width: 100%;
+      max-width: 800px;
+      padding: 60px;
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+
+    .actions-bar {
+      width: 100%;
+      max-width: 800px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 99px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      color: #fff;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(0, 0, 0, 0.03);
+    }
+
+    /* Resume Structure Styling */
+    header {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .profile-header-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .profile-photo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      flex-shrink: 0;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .title-area h1 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+
+    .title-area h2 {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: flex;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    .contact-info a {
+      color: var(--text-color);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-info a:hover {
+      color: var(--accent-color);
+    }
+
+    /* Sections */
+    .section-grid {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      margin-bottom: 40px;
+      gap: 20px;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+    }
+
+    .section-content {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .entry {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .entry-title {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .entry-meta {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .entry-subtitle {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-color);
+    }
+
+    .entry-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      background-color: #f2f2f7;
+      color: var(--text-color);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    /* Print styling rules */
+    @media print {
+      body {
+        background-color: #fff;
+        padding: 0;
+      }
+
+      .actions-bar {
+        display: none;
+      }
+
+      .resume-container {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+    }
+
+    /* Responsive adjustment */
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 10px;
+      }
+
+      .resume-container {
+        padding: 30px 20px;
+      }
+
+      .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .contact-info {
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .section-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Action Bar -->
+  <div class="actions-bar">
+    <a href="index.html#about" class="btn btn-secondary">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      Back to Portfolio
+    </a>
+    <button onclick="window.print()" class="btn btn-primary">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+      Print / Save as PDF
+    </button>
+  </div>
+
+  <!-- Main Resume Frame -->
+  <div class="resume-container">
+    <header>
+      <div class="header-top">
+        <div class="profile-header-left">
+          <div class="profile-photo">
+            <img src="assets/meome.jpeg" alt="Rayhan Adytia Oemarin" />
+          </div>
+          <div class="title-area">
+            <h1>Rayhan Adytia Oemarin, S.Kom.</h1>
+            <h2>UI/UX Designer • Bachelor of Informatics Engineering</h2>
+          </div>
+        </div>
+        <div class="contact-info">
+          <p>📍 Indonesia</p>
+          <p>✉ <a href="mailto:rayhan.adytia11@gmail.com">rayhan.adytia11@gmail.com</a></p>
+          <p>🌐 <a href="https://github.com/rayhan-adytia" target="_blank">github.com/rayhan-adytia</a></p>
+          <p>💼 <a href="https://linkedin.com/in/rayhan-adytia" target="_blank">linkedin.com/in/rayhan-adytia</a></p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Profile Summary -->
+   <!-- Profile Summary -->
+<div class="section-grid">
+  <div class="section-title">Profile</div>
+
+  <div class="section-content">
+    <div class="entry">
+      <p class="entry-desc">
+        Informatics Engineering fresh graduate with hands-on experience
+        in web development using PHP, Laravel, and MySQL,
+        as well as UI/UX design using Figma.
+        Passionate about building responsive,
+        user-friendly, and visually engaging digital products.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Education -->
+<div class="section-grid">
+  <div class="section-title">Education</div>
+
+  <div class="section-content">
+    <div class="entry">
+
+      <div class="entry-header">
+        <span class="entry-title">
+          Bachelor of Informatics Engineering (S.Kom.)
+        </span>
+
+        <span class="entry-meta">
+          2021 — 2026
+        </span>
+      </div>
+
+      <span class="entry-subtitle">
+        Institut Teknologi Padang
+      </span>
+
+      <p class="entry-desc">
+        GPA: 3.30 / 4.00
+      </p>
+
+      <p class="entry-desc">
+        • Frontend Developer — KONEKIN Community Website
+        <br>
+        • Information & Communication Division — UKM UKO
+        <br>
+        • Public Relations — BOLEAN
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<!-- Experience -->
+<div class="section-grid">
+  <div class="section-title">Experience</div>
+
+  <div class="section-content">
+
+    <div class="entry">
+
+      <div class="entry-header">
+        <span class="entry-title">
+          UI/UX Designer Intern
+        </span>
+
+        <span class="entry-meta">
+          2024
+        </span>
+      </div>
+
+      <span class="entry-subtitle">
+        Department of Education of West Sumatra Province
+      </span>
+
+      <p class="entry-desc">
+        Redesigned and improved government website interfaces
+        using Figma, WordPress, and Elementor.
+        Created wireframes, mockups, and responsive layouts
+        for desktop and mobile platforms.
+      </p>
+
+    </div>
+
+    <div class="entry">
+
+      <div class="entry-header">
+        <span class="entry-title">
+          IT Support Intern
+        </span>
+
+        <span class="entry-meta">
+          2020
+        </span>
+      </div>
+
+      <span class="entry-subtitle">
+        Institut Teknologi Padang
+      </span>
+
+      <p class="entry-desc">
+        Installed and maintained hardware/software systems,
+        performed troubleshooting,
+        and configured Local Area Network (LAN)
+        infrastructure for operational support.
+      </p>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- Projects -->
+<div class="section-grid">
+  <div class="section-title">Projects</div>
+
+  <div class="section-content">
+
+    <div class="entry">
+
+      <div class="entry-header">
+        <span class="entry-title">
+          DUNKER'S E-Commerce Website
+        </span>
+
+        <span class="entry-meta">
+          2026
+        </span>
+      </div>
+
+      <p class="entry-desc">
+        Developed a full-featured e-commerce web application using Laravel and MySQL with 9 core pages, covering end-to-end shopping flow from product browsing to checkout. Implemented a Collaborative Filtering algorithm to generate personalized product recommendations based on user behavior, enhancing user engagement and shopping experience. Designed and built a responsive admin dashboard with complete store management features including user management, product management, and sales reporting using Figma.
+      </p>
+
+    </div>
+
+    <div class="entry">
+
+      <div class="entry-header">
+        <span class="entry-title">
+          KONEKIN Community Website
+        </span>
+
+        <span class="entry-meta">
+          2024
+        </span>
+      </div>
+
+      <p class="entry-desc">
+        Contributed as a UI/UX Designer in a collaborative web project, responsible for designing wireframes and user interface layouts using Figma, focused on creating an intuitive and user-friendly experience.
+      </p>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- Skills -->
+<div class="section-grid">
+  <div class="section-title">Skills</div>
+
+  <div class="section-content">
+
+    <div class="entry">
+      <span class="entry-subtitle">Hard Skills</span>
+      <div class="skills-list" style="margin-top: 6px;">
+        <span class="skill-tag">PHP</span>
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">Laravel</span>
+        <span class="skill-tag">MySQL</span>
+        <span class="skill-tag">System Analysis & Design</span>
+        <span class="skill-tag">UI/UX Design</span>
+        <span class="skill-tag">Figma</span>
+        <span class="skill-tag">Basic Networking</span>
+        <span class="skill-tag">Debugging & Testing</span>
+        <span class="skill-tag">Microsoft Office</span>
+      </div>
+    </div>
+
+    <div class="entry" style="margin-top: 8px;">
+      <span class="entry-subtitle">Soft Skills</span>
+      <div class="skills-list" style="margin-top: 6px;">
+        <span class="skill-tag">Problem Solving</span>
+        <span class="skill-tag">Analytical Thinking</span>
+        <span class="skill-tag">Communication</span>
+        <span class="skill-tag">Time Management</span>
+        <span class="skill-tag">Adaptability</span>
+        <span class="skill-tag">Attention to Detail</span>
+        <span class="skill-tag">Teamwork & Collaboration</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Certifications -->
+<div class="section-grid">
+  <div class="section-title">Certificates</div>
+
+  <div class="section-content">
+
+    <div class="entry">
+      <span class="entry-title">
+        Introduction to Cybersecurity — Cisco
+      </span>
+    </div>
+
+    <div class="entry">
+      <span class="entry-title">
+        AWS Cloud Computing — Dilesin Academy
+      </span>
+    </div>
+
+    <div class="entry">
+      <span class="entry-title">
+        Laravel X Vue JS — Dilesin Academy
+      </span>
+    </div>
+
+  </div>
+</div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('print') === 'true') {
+        // Small delay to ensure images/fonts are fully loaded
+        setTimeout(() => {
+          window.print();
+        }, 500);
+      }
+    });
+  </script>
+</body>
+</html>

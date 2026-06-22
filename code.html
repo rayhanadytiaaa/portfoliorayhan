@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio Finder - About Me</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ffb4ab",
+                    "tertiary-fixed": "#ffdcbf",
+                    "secondary": "#c2c1ff",
+                    "on-secondary-fixed-variant": "#3631b4",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-variant": "#353535",
+                    "on-primary-fixed": "#001a41",
+                    "primary-fixed-dim": "#adc6ff",
+                    "on-tertiary-fixed": "#2d1600",
+                    "on-primary-fixed-variant": "#004493",
+                    "on-primary": "#002e69",
+                    "on-primary-container": "#00285c",
+                    "inverse-on-surface": "#303030",
+                    "tertiary-fixed-dim": "#ffb874",
+                    "surface": "#131313",
+                    "on-error": "#690005",
+                    "on-tertiary-fixed-variant": "#6a3b00",
+                    "on-error-container": "#ffdad6",
+                    "secondary-fixed": "#e2dfff",
+                    "error-container": "#93000a",
+                    "tertiary-container": "#d47b00",
+                    "surface-container-lowest": "#0e0e0e",
+                    "background": "#131313",
+                    "on-secondary": "#1c0b9f",
+                    "inverse-primary": "#005bc1",
+                    "surface-container": "#202020",
+                    "on-surface": "#e5e2e1",
+                    "on-secondary-container": "#b2b1ff",
+                    "on-tertiary-container": "#412200",
+                    "surface-container-low": "#1b1b1c",
+                    "surface-bright": "#393939",
+                    "primary-fixed": "#d8e2ff",
+                    "outline-variant": "#414755",
+                    "on-background": "#e5e2e1",
+                    "inverse-surface": "#e5e2e1",
+                    "on-secondary-fixed": "#0c006a",
+                    "on-surface-variant": "#c1c6d7",
+                    "surface-dim": "#131313",
+                    "secondary-fixed-dim": "#c2c1ff",
+                    "outline": "#8b90a0",
+                    "tertiary": "#ffb874",
+                    "primary": "#adc6ff",
+                    "secondary-container": "#3834b6",
+                    "surface-tint": "#adc6ff",
+                    "on-tertiary": "#4b2800",
+                    "primary-container": "#4b8eff",
+                    "surface-container-highest": "#353535"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "dock-height": "64px",
+                    "menu-height": "28px",
+                    "window-padding": "24px",
+                    "margin-desktop": "40px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "body-sm": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "code-label": ["JetBrains Mono"],
+                    "headline-md": ["Inter"],
+                    "menu-bar": ["Inter"],
+                    "window-title": ["Inter"]
+            },
+            "fontSize": {
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "code-label": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "menu-bar": ["13px", {"lineHeight": "13px", "fontWeight": "500"}],
+                    "window-title": ["13px", {"lineHeight": "16px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            overflow: hidden;
+            background: #0a0a0a;
+            height: 100vh;
+        }
+        .glass-edge {
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+        .window-shadow {
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+        .sidebar-active {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #e5e2e1;
+        }
+        .macos-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .macos-red { background: #ff5f56; border: 0.5px solid #e0443e; }
+        .macos-yellow { background: #ffbd2e; border: 0.5px solid #dea123; }
+        .macos-green { background: #27c93f; border: 0.5px solid #1aab29; }
+        
+        .dock-item:hover {
+            transform: scale(1.2) translateY(-10px);
+        }
+        
+        .bento-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+    </style>
+</head>
+<body class="text-on-surface font-body-sm">
+<!-- Desktop Background -->
+<div class="fixed inset-0 z-0">
+
+</div>
+<!-- Top Menu Bar -->
+<header class="fixed top-0 w-full h-[28px] bg-surface/60 backdrop-blur-xl text-on-surface flex justify-between items-center px-4 z-[100] border-b border-on-surface/10 font-menu-bar text-menu-bar">
+<div class="flex items-center gap-4 h-full">
+<span class="font-bold px-2 cursor-default"></span>
+<span class="font-semibold cursor-default">Portfolio</span>
+<span class="cursor-default opacity-80 hover:opacity-100 px-2 transition-opacity">File</span>
+<span class="cursor-default opacity-80 hover:opacity-100 px-2 transition-opacity">Edit</span>
+<span class="cursor-default opacity-80 hover:opacity-100 px-2 transition-opacity">View</span>
+<span class="cursor-default opacity-80 hover:opacity-100 px-2 transition-opacity">Go</span>
+<span class="cursor-default opacity-80 hover:opacity-100 px-2 transition-opacity">Window</span>
+<span class="cursor-default opacity-80 hover:opacity-100 px-2 transition-opacity">Help</span>
+</div>
+<div class="flex items-center gap-4 h-full">
+<span class="material-symbols-outlined text-[16px]">wifi</span>
+<span class="material-symbols-outlined text-[16px]">battery_full</span>
+<span class="material-symbols-outlined text-[16px]">search</span>
+<span class="font-menu-bar text-menu-bar">Wed May 24 10:42 AM</span>
+</div>
+</header>
+<!-- Main Content Area (Finder Window) -->
+<main class="relative h-full flex items-center justify-center p-8 pt-12 pb-24 z-10">
+<div class="w-full max-w-5xl h-[640px] bg-surface-container-low/80 backdrop-blur-3xl rounded-xl glass-edge window-shadow flex flex-col overflow-hidden animate-in fade-in zoom-in duration-500">
+<!-- Window Title Bar -->
+<div class="h-12 flex items-center px-4 bg-surface-variant/40 border-b border-white/5 select-none shrink-0">
+<div class="flex gap-2 w-20">
+<div class="macos-dot macos-red"></div>
+<div class="macos-dot macos-yellow"></div>
+<div class="macos-dot macos-green"></div>
+</div>
+<div class="flex-1 text-center font-window-title text-window-title opacity-70 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">person</span>
+<span>About Me — Finder</span>
+</div>
+<div class="w-20 flex justify-end gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px] cursor-pointer">grid_view</span>
+<span class="material-symbols-outlined text-[20px] cursor-pointer">chevron_left</span>
+<span class="material-symbols-outlined text-[20px] cursor-pointer opacity-30">chevron_right</span>
+</div>
+</div>
+<!-- Window Content Wrapper -->
+<div class="flex flex-1 overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-48 bg-surface-container-low/50 backdrop-blur-lg p-3 flex flex-col gap-1 border-r border-white/5 shrink-0">
+<div class="text-[11px] font-bold text-on-surface-variant/50 px-2 pb-1 pt-2 uppercase tracking-wider">Favorites</div>
+<a class="flex items-center gap-2 px-2 py-1.5 rounded-md sidebar-active transition-all group" href="#">
+<span class="material-symbols-outlined text-[18px] text-primary" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-window-title text-window-title">Background</span>
+</a>
+<a class="flex items-center gap-2 px-2 py-1.5 rounded-md text-on-surface-variant hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-[18px]">school</span>
+<span class="font-window-title text-window-title">Education</span>
+</a>
+<a class="flex items-center gap-2 px-2 py-1.5 rounded-md text-on-surface-variant hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+<span class="font-window-title text-window-title">Experience</span>
+</a>
+<a class="flex items-center gap-2 px-2 py-1.5 rounded-md text-on-surface-variant hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+<span class="font-window-title text-window-title">Interests</span>
+</a>
+<div class="mt-6 text-[11px] font-bold text-on-surface-variant/50 px-2 pb-1 pt-2 uppercase tracking-wider">Tags</div>
+<div class="flex flex-col gap-1 px-2">
+<div class="flex items-center gap-3 py-1">
+<div class="w-2.5 h-2.5 rounded-full bg-blue-500 shadow-sm shadow-blue-500/50"></div>
+<span class="text-xs opacity-70">Frontend</span>
+</div>
+<div class="flex items-center gap-3 py-1">
+<div class="w-2.5 h-2.5 rounded-full bg-purple-500 shadow-sm shadow-purple-500/50"></div>
+<span class="text-xs opacity-70">Backend</span>
+</div>
+<div class="flex items-center gap-3 py-1">
+<div class="w-2.5 h-2.5 rounded-full bg-orange-500 shadow-sm shadow-orange-500/50"></div>
+<span class="text-xs opacity-70">Creative</span>
+</div>
+</div>
+</aside>
+<!-- Main Canvas (The Bento Grid) -->
+<section class="flex-1 bg-surface/30 overflow-y-auto p-8 custom-scrollbar">
+<div class="grid grid-cols-12 grid-rows-6 gap-4 h-full min-h-[500px]">
+<!-- Profile Card -->
+<div class="col-span-8 row-span-3 bento-card rounded-2xl p-6 flex gap-6 relative overflow-hidden group">
+<div class="relative z-10 w-32 h-32 shrink-0 rounded-2xl overflow-hidden border border-white/10 shadow-lg">
+<img class="w-full h-full object-cover" data-alt="A professional portrait of a young Computer Science student with a friendly smile, styled in a high-tech dark mode aesthetic with soft blue rim lighting. The subject is wearing a modern black hoodie, and the background is a subtly blurred office setting with glowing terminal screens. The overall mood is sophisticated, professional, and forward-thinking, emphasizing technical mastery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiWflbbDn2E-g3UPgp7olaxVbaY1YZgx_6L9bp-p6KZmIuO52JrJdNh62hSxCFOhFVQj6jDwO1fPp0v-AYInC7q1DFl74uU5zY2l8qSMFqxcqOdMLDMuIGPXkRXVrhMhKPulDxWKdq33p1Is61S9rWy_gViFjewx0JyTPFxOw8vjDgLvdpD6gR8-33eX5sPcHos_2F43R7h6gTz7q41w3i5LnGpthLBOY6MXvKyg5TCsyTQEmVFFAqyXj0gRWJD38MuKa5fS1TmQaC"/>
+</div>
+<div class="relative z-10 flex flex-col justify-center">
+<h1 class="font-display-lg text-headline-md mb-1 text-on-surface">Alex Rivera</h1>
+<p class="text-primary font-code-label tracking-wide mb-3">TEKNIK INFORMATIKA • UNDERGRADUATE</p>
+<p class="text-on-surface-variant font-body-sm leading-relaxed max-w-md">
+                                    Full-stack developer student with a passion for building sleek, performant user interfaces and robust distributed systems. Currently exploring the intersection of AI and human-computer interaction.
+                                </p>
+</div>
+<!-- Background decoration -->
+<div class="absolute -right-10 -bottom-10 w-48 h-48 bg-primary/10 blur-[80px] rounded-full group-hover:bg-primary/20 transition-colors"></div>
+</div>
+<!-- Quick Links / Stats -->
+<div class="col-span-4 row-span-3 bento-card rounded-2xl p-6 flex flex-col justify-between">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-container/30 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest font-bold">Location</p>
+<p class="font-medium">Jakarta, Indonesia</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-tertiary-container/30 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">code</span>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest font-bold">Language</p>
+<p class="font-medium">React, Python, Go</p>
+</div>
+</div>
+</div>
+<button class="w-full py-2.5 bg-primary text-on-primary font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">mail</span>
+<span>Get in touch</span>
+</button>
+</div>
+<!-- Education Timeline -->
+<div class="col-span-12 row-span-3 bento-card rounded-2xl p-6">
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline-md text-on-surface">Education Milestones</h2>
+<span class="text-xs font-code-label bg-white/5 px-2 py-1 rounded border border-white/10">3 FILES FOUND</span>
+</div>
+<div class="grid grid-cols-3 gap-6">
+<div class="relative pl-6 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-px before:bg-gradient-to-b before:from-primary before:to-transparent">
+<p class="text-primary font-code-label mb-1">2021 — PRESENT</p>
+<h3 class="font-bold text-on-surface">B.S. Computer Science</h3>
+<p class="text-sm text-on-surface-variant">Universitas Indonesia</p>
+<p class="text-xs mt-2 opacity-60">Focus on Software Architecture &amp; Machine Learning. GPA: 3.8/4.0</p>
+</div>
+<div class="relative pl-6 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-px before:bg-gradient-to-b before:from-secondary before:to-transparent">
+<p class="text-secondary font-code-label mb-1">2023 SUMMER</p>
+<h3 class="font-bold text-on-surface">Web Dev Bootcamp</h3>
+<p class="text-sm text-on-surface-variant">Remote Exchange Program</p>
+<p class="text-xs mt-2 opacity-60">Intensive 3-month course on modern fullstack architectures and cloud deployment.</p>
+</div>
+<div class="relative pl-6 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-px before:bg-gradient-to-b before:from-tertiary-fixed before:to-transparent">
+<p class="text-tertiary font-code-label mb-1">2018 — 2021</p>
+<h3 class="font-bold text-on-surface">Science Major</h3>
+<h3 class="font-bold text-on-surface">High School Graduate</h3>
+<p class="text-sm text-on-surface-variant">Top 5% Graduate</p>
+<p class="text-xs mt-2 opacity-60">Participated in Informatics Olympiad at regional level.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Bottom Dock -->
+<nav class="fixed bottom-3 left-1/2 -translate-x-1/2 rounded-2xl bg-surface-container/40 backdrop-blur-2xl border border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.3)] px-3 py-2 flex items-end gap-3 z-[100]">
+<div class="dock-item relative group flex flex-col items-center gap-1 cursor-pointer transition-all duration-300 ease-out origin-bottom">
+<div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-blue-500 to-blue-300 flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">home</span>
+</div>
+<div class="absolute -top-10 scale-0 group-hover:scale-100 transition-transform bg-surface-container-high/90 backdrop-blur px-2 py-1 rounded-md text-[11px] font-bold border border-white/10">Home</div>
+</div>
+<div class="dock-item relative group flex flex-col items-center gap-1 cursor-pointer transition-all duration-300 ease-out origin-bottom">
+<div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-purple-500 to-purple-300 flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<div class="absolute -top-10 scale-0 group-hover:scale-100 transition-transform bg-surface-container-high/90 backdrop-blur px-2 py-1 rounded-md text-[11px] font-bold border border-white/10">About</div>
+<div class="absolute -bottom-1 w-1 h-1 bg-on-surface rounded-full"></div>
+</div>
+<div class="dock-item relative group flex flex-col items-center gap-1 cursor-pointer transition-all duration-300 ease-out origin-bottom">
+<div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-orange-500 to-orange-300 flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">folder_open</span>
+</div>
+<div class="absolute -top-10 scale-0 group-hover:scale-100 transition-transform bg-surface-container-high/90 backdrop-blur px-2 py-1 rounded-md text-[11px] font-bold border border-white/10">Projects</div>
+</div>
+<div class="dock-item relative group flex flex-col items-center gap-1 cursor-pointer transition-all duration-300 ease-out origin-bottom">
+<div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-emerald-500 to-emerald-300 flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">terminal</span>
+</div>
+<div class="absolute -top-10 scale-0 group-hover:scale-100 transition-transform bg-surface-container-high/90 backdrop-blur px-2 py-1 rounded-md text-[11px] font-bold border border-white/10">Skills</div>
+</div>
+<div class="dock-item relative group flex flex-col items-center gap-1 cursor-pointer transition-all duration-300 ease-out origin-bottom">
+<div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-rose-500 to-rose-300 flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">mail</span>
+</div>
+<div class="absolute -top-10 scale-0 group-hover:scale-100 transition-transform bg-surface-container-high/90 backdrop-blur px-2 py-1 rounded-md text-[11px] font-bold border border-white/10">Contact</div>
+</div>
+</nav>
+<script>
+        // Micro-interaction for Sidebar
+        const sidebarLinks = document.querySelectorAll('aside a');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                sidebarLinks.forEach(l => {
+                    l.classList.remove('sidebar-active');
+                    l.classList.add('text-on-surface-variant');
+                    l.querySelector('span:first-child').style.fontVariationSettings = "'FILL' 0";
+                });
+                link.classList.add('sidebar-active');
+                link.classList.remove('text-on-surface-variant');
+                link.querySelector('span:first-child').style.fontVariationSettings = "'FILL' 1";
+            });
+        });
+
+        // Draggable window mockup (visual only)
+        const windowHeader = document.querySelector('.bg-surface-variant\\/40');
+        let isDragging = false;
+        
+        windowHeader.addEventListener('mousedown', () => {
+            isDragging = true;
+            windowHeader.style.cursor = 'grabbing';
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+            windowHeader.style.cursor = 'default';
+        });
+
+        // Close button mock interaction
+        document.querySelector('.macos-red').addEventListener('click', () => {
+            const windowEl = document.querySelector('main > div');
+            windowEl.style.transform = 'scale(0.8) translateY(100px)';
+            windowEl.style.opacity = '0';
+            setTimeout(() => {
+                windowEl.style.transform = 'scale(1)';
+                windowEl.style.opacity = '1';
+            }, 2000);
+        });
+    </script>
+</body></html>
