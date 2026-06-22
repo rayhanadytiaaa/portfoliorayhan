@@ -368,17 +368,41 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
       
-      const emailRecipient = 'rayhan.adytia11@gmail.com';
-      const subject = encodeURIComponent(`Inquiry from ${nameVal} via Portfolio`);
-      const body = encodeURIComponent(
-        `Hi Rayhan,\n\n${messageVal}\n\nBest regards,\n${nameVal}\nEmail: ${emailVal}`
-      );
+      const submitBtn = document.getElementById('form-btn-submit');
+      const originalBtnContent = submitBtn.innerHTML;
       
-      const mailtoUrl = `mailto:${emailRecipient}?subject=${subject}&body=${body}`;
-      window.location.href = mailtoUrl;
-      
-      showNotification('Mail Client Triggered', `Drafting email to Rayhan from ${nameVal}.`);
-      contactForm.reset();
+      // Update button state
+      submitBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">refresh</span><span>Sending...</span>';
+      submitBtn.disabled = true;
+      submitBtn.classList.add('opacity-70');
+
+      fetch("https://formsubmit.co/ajax/rayhan.adytia11@gmail.com", {
+          method: "POST",
+          headers: { 
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+              name: nameVal,
+              email: emailVal,
+              message: messageVal,
+              _subject: `New message from ${nameVal} (Portfolio)`
+          })
+      })
+      .then(response => response.json())
+      .then(data => {
+          showNotification('Message Sent!', 'Your message has been sent successfully to Rayhan.');
+          contactForm.reset();
+      })
+      .catch(error => {
+          showNotification('Sending Failed', 'Could not send the message. Please try again.', true);
+      })
+      .finally(() => {
+          // Restore button state
+          submitBtn.innerHTML = originalBtnContent;
+          submitBtn.disabled = false;
+          submitBtn.classList.remove('opacity-70');
+      });
     });
   }
 
@@ -451,5 +475,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 400);
     }, 4500);
   }
+
+  // Expose to global scope for inline handlers
+  window.showNotification = showNotification;
+  
+  window.copyEmailToClipboard = function(email) {
+    navigator.clipboard.writeText(email).then(() => {
+      showNotification('Email Copied', `${email} has been copied to your clipboard.`);
+    }).catch(err => {
+      showNotification('Copy Failed', 'Could not copy email to clipboard.', true);
+    });
+  };
 
 });

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rayhan Adytia, S.Kom. — Portfolio</title>
+  <link rel="icon" href="https://github.com/rayhanadytiaaa.png" type="image/png">
   
   <meta name="description" content="Personal portfolio of Rayhan Adytia Oemarin, S.Kom., UI/UX Designer & Bachelor of Informatics Engineering. Crafting sleek, minimalist, and highly tactile digital product experiences.">
   <meta name="keywords" content="Rayhan Adytia Oemarin, UI/UX Design, Informatics Engineering, Portfolio, Figma, Front-end, Product Design, Indonesia">
@@ -56,12 +57,6 @@
 </head>
 <body class="font-sans text-sm bg-[var(--bg-app)] text-[var(--text-primary)]">
 
-  <!-- ==========================================================================
-       1. Top Fixed Logo
-       ========================================================================== -->
-  <button onclick="switchPage('home')" class="fixed top-6 left-6 sm:top-8 sm:left-8 z-50 flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-br from-primary to-secondary shadow-lg shadow-primary/20 border border-white/20 select-none hover:scale-105 active:scale-95 transition-all duration-300 group" aria-label="Go to Home">
-    <span class="font-mono font-extrabold text-xl sm:text-2xl text-background group-hover:opacity-90">R</span>
-  </button>
   <!-- ==========================================================================
        2. Main Content Area
        ========================================================================== -->
@@ -280,7 +275,7 @@
                 <div class="flex flex-col gap-2.5 pt-4 border-t border-white/5 text-xs select-none">
                   <div class="flex justify-between items-center">
                     <span class="text-on-surface-variant font-medium">Email</span>
-                    <a class="text-primary hover:underline" href="mailto:rayhan.adytia11@gmail.com">rayhan.adytia11@gmail.com</a>
+                    <button class="text-primary hover:underline" onclick="copyEmailToClipboard('rayhan.adytia11@gmail.com')">rayhan.adytia11@gmail.com</button>
                   </div>
                   <div class="flex justify-between items-center">
                     <span class="text-on-surface-variant font-medium">LinkedIn</span>
@@ -464,7 +459,7 @@
                   <span class="text-[9px] text-on-surface-variant uppercase tracking-widest font-bold font-mono">Web • Community • UI/UX Design • 2024</span>
                   <h3 class="font-bold text-base text-on-surface group-hover:text-secondary transition-colors">KONEKIN Community</h3>
                   <p class="text-xs text-on-surface-variant leading-relaxed mb-2 flex-grow">
-                    Contributed as a UI/UX Designer in a collaborative web project. Responsible for designing wireframes and user interface layouts using Figma, focusing on creating an intuitive, modern, and user-friendly experience.
+                    A collaborative platform designed for communities to connect, exchange ideas, and share knowledge. Contributed as a UI/UX Designer to create intuitive wireframes and user interface layouts using Figma.
                   </p>
                   <div class="flex gap-1.5">
                     <span class="px-2 py-0.5 rounded text-[8px] bg-white/5 border border-white/10 font-mono text-on-surface-variant">FIGMA</span>
@@ -492,10 +487,10 @@
                   <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                     Have a product idea, dynamic startup, or need a developer with interface design skills? Send a note—I respond within 48 hours.
                   </p>
-                  <a href="mailto:rayhan.adytia11@gmail.com" class="py-2.5 bg-white/5 border border-white/10 hover:bg-white/10 transition-all font-semibold rounded-xl flex items-center justify-center gap-2 text-xs text-on-surface">
-                    <span class="material-symbols-outlined text-[16px] text-primary">mail</span>
+                  <button onclick="copyEmailToClipboard('rayhan.adytia11@gmail.com')" class="w-full py-2.5 bg-white/5 border border-white/10 hover:bg-white/10 transition-all font-semibold rounded-xl flex items-center justify-center gap-2 text-xs text-on-surface">
+                    <span class="material-symbols-outlined text-[16px] text-primary">content_copy</span>
                     <span>rayhan.adytia11@gmail.com</span>
-                  </a>
+                  </button>
                 </div>
 
                 <div class="bento-card rounded-2xl p-6 flex flex-col gap-3">
@@ -512,10 +507,6 @@
                     <div class="flex justify-between items-center">
                       <span class="text-on-surface-variant">Instagram</span>
                       <a class="text-primary hover:underline" href="https://instagram.com/ryhann16_" target="_blank">@ryhann16_ &nearr;</a>
-                    </div>
-                    <div class="flex justify-between items-center">
-                      <span class="text-on-surface-variant">Dribbble</span>
-                      <a class="text-primary hover:underline" href="https://dribbble.com/rayhan.ux" target="_blank">@rayhan.ux &nearr;</a>
                     </div>
                   </div>
                 </div>

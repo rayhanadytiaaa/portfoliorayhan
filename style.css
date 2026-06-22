@@ -150,7 +150,7 @@ body.light-mode .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   min-height: 100%;
   padding-bottom: 3rem;
   box-sizing: border-box;
-  max-width: 64rem; /* 1024px (max-w-5xl) */
+  max-width: 100%;
   margin: 0 auto;
   width: 100%;
 }
