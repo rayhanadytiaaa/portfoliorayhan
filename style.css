@@ -148,7 +148,7 @@ body.light-mode .custom-scrollbar::-webkit-scrollbar-thumb:hover {
 /* Single page scroll section defaults */
 .page-section {
   min-height: 100%;
-  padding-bottom: 3rem;
+  padding-bottom: 7rem; /* Provides enough clearance for the floating dock */
   box-sizing: border-box;
   max-width: 100%;
   margin: 0 auto;
